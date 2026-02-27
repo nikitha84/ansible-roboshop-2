@@ -52,14 +52,14 @@
       dest: /app
       remote_src: yes 
 
-  - name: install dependecies
-    ansible.builtin.commnd: mvn clean package
-    arg:
+  - name: install dependencies
+    ansible.builtin.command: mvn clean package
+    args:
       chdir: /app
 
   - name: move jar files 
     ansible.builtin.commnd: mv target/shipping-1.0.jar shipping.jar 
-    arg:
+    args:
       chdir: /app
 
   - name: copy shippng service file
@@ -79,7 +79,7 @@
     - /app/db/schema.sql
     - /app/db/app-user.sql
     - /app/db/master-data.sql 
-    
+
   - name: daemon reload     
     ansible.builtin.systemd_service:
       name: shipping
