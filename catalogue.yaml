@@ -1,4 +1,4 @@
-- name: catalogue
+- name: configure catalogue server
   hosts: catalogue
   become: yes
   tasks:
@@ -13,25 +13,26 @@
       name: nodejs
       state: present
 
-  - name: create user for nodejs
+  - name: create system user for run app with nonroot access
     ansible.builtin.user:
       name: roboshop
       comment: roboshop system user
       system: true
       shell: /sbin/nologin
+      home: /app
 
   - name: remove app directory
-    ansible.builtin.files:
+    ansible.builtin.file:
       state: absent
       path: /app
 
   - name: create directory
-    ansible.builtin.files:
+    ansible.builtin.file:
       state: directory
       path: /app
       
-  - name: delete catalogue files
-    ansible.builtin.files:
+  - name: delete catalogue file
+    ansible.builtin.file:
       path: /tmp/catalogue.zip
       state: absent
 

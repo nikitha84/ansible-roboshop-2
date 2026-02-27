@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: install mysql 
-    ansible.buitin.dnf: 
+    ansible.buiitin.dnf: 
       name: mysql-server
       state: present
 
