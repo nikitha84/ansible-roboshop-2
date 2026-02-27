@@ -9,9 +9,9 @@
     env: dev
     instances:
     - mongodb
-    # - redis
-    # - mysql
-    # - rabbitmq
+    - redis
+    - mysql
+    - rabbitmq
     # - catalogue
     # - user
     # - cart
