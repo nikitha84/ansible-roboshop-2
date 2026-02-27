@@ -38,7 +38,7 @@
 
   - name: download user application
     ansible.builtin.get_url:
-      url: curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
+      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
       dest: /tmp/user.zip
 
   - name: unzip code

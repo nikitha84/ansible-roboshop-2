@@ -35,7 +35,7 @@
 
   - name: download  application file
     ansible.builtin.get_url:
-      url: curl -L -o /tmp/payment.zip https://roboshop-artifacts.s3.amazonaws.com/payment-v3.zip
+      url: https://roboshop-artifacts.s3.amazonaws.com/payment-v3.zip 
       dest: /tmp/payment.zip
 
   - name: unzip code

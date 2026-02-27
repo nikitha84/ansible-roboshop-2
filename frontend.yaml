@@ -25,7 +25,7 @@
 
   - name: download frontend application
     ansible.builtin.get_url:
-      url: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+      url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
       dest: /tmp/frontend.zip
 
   - name: unzip frontend file
