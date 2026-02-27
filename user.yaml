@@ -19,18 +19,20 @@
       comment: roboshop system user
       system: true
       shell: /sbin/nologin
+      home: /app
       
   - name: remove app directory
-    ansible.builtin.files:
+    ansible.builtin.file:
       state: absent
       path: /app
 
   - name: create directory
-    ansible.builtin.files:
+    ansible.builtin.file:
       state: directory
       path: /app
+
   - name: delete user files
-    ansible.builtin.files:
+    ansible.builtin.file:
       path: /tmp/user.zip
       state: absent
 
@@ -50,7 +52,7 @@
       path: /app
 
   - name: copy user service files
-    ansible.builtin.file:
+    ansible.builtin.copy:
       src: user.service
       dest: /etc/systemd/system/user.service
 

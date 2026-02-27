@@ -4,8 +4,8 @@ Description=Shipping Service
 [Service]
 User=roboshop
 // highlight-start
-Environment=CART_ENDPOINT=cart.nikitha.fun:8080
-Environment=DB_HOST=mysql.nikitha.fun
+Environment=CART_ENDPOINT=cart-dev.nikitha.fun:8080
+Environment=DB_HOST=mysql-dev.nikitha.fun
 // highlight-end
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
