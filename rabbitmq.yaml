@@ -13,10 +13,10 @@
       state: present
 
   - name: start and enable
-    ansible.builtin.server:
-      state: restarted
+    ansible.builtin.service:
+      state: started
       enabled: yes 
-       
+
   - name: create  and provide permission to user
     community.rabbitmq.rabbitmq_user:
       user: roboshop
