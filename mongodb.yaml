@@ -13,7 +13,7 @@
       state: present    
      
   - name: Allow remote access
-    ansible.buitin.replace: #word replace
+    ansible.builtin.replace: #word replace
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'   
