@@ -19,19 +19,20 @@
       comment: roboshop system cart
       system: true
       shell: /sbin/nologin
+      home: /app
 
   - name: remove app directory
-    ansible.builtin.files:
+    ansible.builtin.file:
       state: absent
       path: /app
 
   - name: create directory
-    ansible.builtin.files:
+    ansible.builtin.file:
       state: directory
       path: /app
 
   - name: delete cart files
-    ansible.builtin.files:
+    ansible.builtin.file:
       path: /tmp/cart.zip
       state: absent
 
