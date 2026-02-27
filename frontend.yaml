@@ -45,7 +45,7 @@
       path: /etc/nginx/nginx.conf   
 
   - name: restart nginx
-    ansible.builtin.server:
+    ansible.builtin.service:
       name: nginx
       state: started  
       enabled: yes
